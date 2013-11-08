@@ -5,6 +5,11 @@
         android:title="@string/du_settings_title" >
 
         <PreferenceScreen
+                android:key="clock_style_pref"
+                android:fragment="com.android.settings.du.StatusBarClockStyle"
+                android:title="@string/status_bar_clock" />
+
+        <PreferenceScreen
                 android:key="navigation_bar"
                 android:fragment="com.android.settings.du.NavigationBarSettings"
                 android:title="@string/navigation_bar_title" />
