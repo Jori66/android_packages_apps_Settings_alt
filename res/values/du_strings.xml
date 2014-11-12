@@ -33,4 +33,8 @@
     <string name="share_message">Check out what #DirtyUnicorns is all about @ http://goo.gl/emISQ1</string>
     <string name="share_chooser_title">Share Dirty Unicorns</string>
 
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+    <string name="screenshot_sound_summary">Plays sound effect when screenshot is taken</string>
+
 </resources>
