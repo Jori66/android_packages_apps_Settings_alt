@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Strings from packages/apps/Settings/res/values/strings.xml -->
+
+    <!-- Used for diagnostic screens, precise translation is not necessary -->
+    <string name="intent_sender_data_label"><xliff:g id="data">Donnée :</xliff:g></string>
+
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="build_date">Date de compilation</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+
+    <!-- [CHAR_LIMIT=40] Battery saver: Value for automatic entry option: pct% battery -->
+    <string name="battery_saver_turn_on_automatically_pct">à %1$d%% de batterie</string>
+
+    <!-- Strings from packages/apps/Settings/res/values/du_strings.xml -->
+
+
+    <!-- DU Extra Info -->
+    <string name="duextrainfo">Informations supplémentaires</string>
+    <string name="duextrainfo_summary">Affiche des informations supplémentaires pour CPU, Écran, etc</string>
+
+    <!-- DU version -->
+    <string name="mod_version">Version de DU</string>
+    <string name="mod_version_default">Inconnue</string>
+
+    <!-- Share Dirty Unicorns -->
+    <string name="share_du_title">Recommander Dirty Unicorns</string>
+    <string name="share_du_summary">Faites la promotion de Dirty Unicorns</string>
+    <string name="share_message">Découvrez la ROM Android #DirtyUnicorns sur http://goo.gl/emISQ1</string>
+    <string name="share_chooser_title">Recommander Dirty Unicorns</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_sound_title">Capture d\'écran</string>
+    <string name="screenshot_sound_summary">Émettre un son lors de la capture d\'écran</string>
+
+</resources>
