@@ -25,6 +25,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
@@ -33,22 +34,22 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class SoundSettings extends SettingsPreferenceFragment implements
+public class VolumeKeys extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "VolumeKeys";
 
 
+    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
 
+    private PreferenceCategory mWakeUpOptions;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mVolumeWake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final Activity activity = getActivity();
-        final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.volume_keys);
 
@@ -57,6 +58,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM, 0) != 0);
         mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);
 
+        mWakeUpOptions = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_WAKEUP_CATEGORY);
         int counter = 0;
         mVolumeWake = (SwitchPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
@@ -64,7 +66,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 mWakeUpOptions.removePreference(mVolumeWake);
                 counter++;
             } else {
-                mVolumeWake.setChecked(Settings.System.getInt(resolver,
+                mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
                 mVolumeWake.setOnPreferenceChangeListener(this);
             }
