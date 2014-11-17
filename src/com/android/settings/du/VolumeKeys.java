@@ -39,12 +39,16 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
 
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
+    private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
 
     private SwitchPreference mVolumeKeysControlMedia;
+    private SwitchPreference mVolumeWake;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Activity activity = getActivity();
+        final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.volume_keys);
 
@@ -52,6 +56,23 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mVolumeKeysControlMedia.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM, 0) != 0);
         mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);
+
+        int counter = 0;
+        mVolumeWake = (SwitchPreference) findPreference(KEY_VOLUME_WAKE);
+        if (mVolumeWake != null) {
+            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
+                mWakeUpOptions.removePreference(mVolumeWake);
+                counter++;
+            } else {
+                mVolumeWake.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+                mVolumeWake.setOnPreferenceChangeListener(this);
+            }
+        }
+
+        if (counter == 2) {
+            getPreferenceScreen().removePreference(mWakeUpOptions);
+        }
     }
 
     @Override
@@ -70,6 +91,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         if (KEY_VOL_MEDIA.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM,
+                    (Boolean) objValue ? 1 : 0);
+        }
+        if (KEY_VOLUME_WAKE.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_WAKE_SCREEN,
                     (Boolean) objValue ? 1 : 0);
         }
         return true;
