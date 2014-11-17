@@ -15,9 +15,16 @@
                 android:title="@string/navigation_bar_title" />
 
         <PreferenceScreen
-                android:key="advanced_sound_settings"
-                android:title="@string/advanced_sound_title"
+                android:key="volume_keys_settings"
+                android:title="@string/volume_keys_title"
                 android:persistent="false"
-                android:fragment="com.android.settings.du.SoundSettings" />
+                android:fragment="com.android.settings.du.VolumeKeys" />
+
+        <PreferenceScreen
+                android:key="privacy_guard_manager"
+                android:fragment="com.android.settings.terminus.privacyguard.PrivacyGuardManager"
+                android:summary="@string/privacy_guard_manager_summary"
+                android:title="@string/privacy_guard_manager_title" />
+>>>>>>> f341588... rename a few things for further use:res/xml/system_settings.xml
 
 </PreferenceScreen>
