@@ -59,22 +59,10 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
         mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);
 
         mWakeUpOptions = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_WAKEUP_CATEGORY);
-        int counter = 0;
         mVolumeWake = (SwitchPreference) findPreference(KEY_VOLUME_WAKE);
-        if (mVolumeWake != null) {
-            if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
-                mWakeUpOptions.removePreference(mVolumeWake);
-                counter++;
-            } else {
-                mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                        Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-                mVolumeWake.setOnPreferenceChangeListener(this);
-            }
-        }
-
-        if (counter == 2) {
-            getPreferenceScreen().removePreference(mWakeUpOptions);
-        }
+        mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
+        mVolumeWake.setOnPreferenceChangeListener(this);
     }
 
     @Override
