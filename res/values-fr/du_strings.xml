@@ -48,5 +48,22 @@
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">Capture d\'écran</string>
     <string name="screenshot_sound_summary">Émettre un son lors de la capture d\'écran</string>
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+
+    <!-- Partition Info -->
+    <string name="partition_info_title">Informations Partitions</string>
+    <string name="partition_info_system">/system</string>
+    <string name="partition_info_data">/data</string>
+    <string name="partition_info_cache">/cache</string>
+    <string name="partition_info_sdcard">/sdcard (FAT)</string>
+    <string name="partition_info_sdext">/sd-ext (EXT)</string>
+    <string name="partition_info_used_of">/</string>
+
+    <!-- [CHAR LIMIT=NONE] App ops settings summary, on main settings screen. If clicked, the user is taken to a settings screen for app operations -->
+    <string name="app_ops_settings_summary">Afficher ou éditer les autorisations des applications</string>
+
+    <!-- Toast message when trying to open system app AppOps -->
+    <string name="appops_sys_app">Impossible de modifier les opérations pour les applications du système</string>
 
 </resources>
