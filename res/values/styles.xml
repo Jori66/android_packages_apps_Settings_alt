@@ -16,10 +16,43 @@
 
 <resources>
 
+    <style name="setup_wizard_navbar_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">?setup_wizard_navbar_bg_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">56.0dip</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:paddingStart">24.0dip</item>
+        <item name="android:paddingEnd">24.0dip</item>
+    </style>
+    <style name="setup_wizard_navbar_theme_dark">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_dark</item>
+        <item name="setup_wizard_navbar_text_color">@color/setup_wizard_navbar_text_dark</item>
+    </style>
+    <style name="setup_wizard_navbar_theme_light">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_light</item>
+        <item name="setup_wizard_navbar_text_color">@color/setup_wizard_navbar_text_light</item>
+    </style>
+    <style name="setup_wizard_navbar_button_style" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">?setup_wizard_navbar_text_color</item>
+        <item name="android:background">@drawable/setup_wizard_navbar_btn_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">0.0dip</item>
+        <item name="android:drawablePadding">6.0dip</item>
+        <item name="android:layout_weight">0.0</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingStart">10.0dip</item>
+        <item name="android:paddingEnd">10.0dip</item>
+    </style>
+
     <style name="info_label">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textAppearance">@style/TextAppearance.info_label</item>
+        <item name="android:textColor">@color/theme_primary</item>
         <item name="android:paddingEnd">4dip</item>
     </style>
 
@@ -27,6 +60,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textAppearance">@style/TextAppearance.info_value</item>
+        <item name="android:textColor">@color/theme_primary</item>
     </style>
 
     <style name="info_small">
@@ -41,8 +75,8 @@
         <item name="android:paddingTop">10dip</item>
         <item name="android:paddingEnd">10dip</item>
         <item name="android:paddingBottom">10dip</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
     </style>
 
     <style name="entry_layout">
@@ -53,7 +87,7 @@
 
     <style name="form_value">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
     </style>
 
 
@@ -151,7 +185,7 @@
     <!-- We'd like to have this as 16dip hight including paddingTop/paddingBottom to
          be consistent with ProgressBar -->
     <style name="TopDivider">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">@dimen/divider_height</item>
         <item name="android:background">?attr/setup_divider_color</item>
         <item name="android:focusable">false</item>
@@ -197,7 +231,7 @@
     </style>
 
     <style name="bt_item">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">8dip</item>
         <item name="android:layout_marginStart">16dip</item>
@@ -214,7 +248,7 @@
     </style>
 
     <style name="bt_item_edit_content">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">18sp</item>
     </style>
@@ -227,6 +261,7 @@
         <item name="android:paddingEnd">8dip</item>
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">start</item>
+        <item name="android:textColor">@android:color/primary_text_default_material_dark</item>
     </style>
 
     <style name="wifi_item_label">
@@ -234,13 +269,13 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Material.Body1</item>
-        <item name="android:textColor">@*android:color/secondary_text_default_material_light</item>
+        <item name="android:textColor">@android:color/secondary_text_default_material_dark</item>
     </style>
 
     <style name="wifi_item_content">
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Material.Subhead</item>
-        <item name="android:textColor">@*android:color/primary_text_default_material_light</item>
+        <item name="android:textColor">@android:color/primary_text_default_material_dark</item>
     </style>
 
     <style name="wifi_item_edit_content">
@@ -269,7 +304,7 @@
     </style>
 
     <style name="SecurityPreferenceButtonContainer" parent="@android:style/Widget.Material.Light.SegmentedButton">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:weightSum">2</item>
         <item name="android:dividerPadding">8dip</item>
@@ -290,7 +325,7 @@
     </style>
 
     <style name="vpn_value">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
         <item name="android:singleLine">true</item>
@@ -360,7 +395,7 @@
     </style>
 
     <style name="Widget.TimePicker" parent="@*android:style/Widget.Material.Light.TimePicker">
-        <item name="@android:numbersBackgroundColor">@android:color/white</item>
+        <item name="@android:numbersBackgroundColor">@android:color/black</item>
     </style>
 
 </resources>
