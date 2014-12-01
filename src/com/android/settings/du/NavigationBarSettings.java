@@ -1,5 +1,5 @@
 
-package com.android.settings.terminus;
+package com.android.settings.du;
 
 import android.os.Bundle;
 import android.preference.ListPreference;
