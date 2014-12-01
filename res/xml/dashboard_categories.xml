@@ -87,7 +87,7 @@
         <!-- Jori TWEAKS -->
         <dashboard-tile
                 android:id="@+id/du_settings"
-                android:title="@string/system_settings_title"
+                android:title="@string/du_settings_title"
                 android:fragment="com.android.settings.du.DuSettings"
                 android:icon="@drawable/ic_settings_jori" 
                 />
